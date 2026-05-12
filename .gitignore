@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Flight data (add manually when ready)
+*.CSV
+*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
