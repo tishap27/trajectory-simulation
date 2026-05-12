@@ -57,56 +57,5 @@ T_max = max(motor.thrusts)
 m0= rocket.dry_mass + rocket.prop_mass
 print("T/W:", T_max / (m0 * 9.81))
 
-df = pd.read_csv("Flight Test.CSV")
 
-real_time = df["Time (sec)"]
-real_time = real_time - real_time.iloc[0]
-
-
-real_alt = df["Altitude (ft)"] * 0.3048
-real_vel = df["Velocity (ft/sec)"] * 0.3048
-real_thrust = df["Thrust (lb)"] * 4.44822
-
-real_mach = df["Mach Number"]
-
-real_cd = df["CD"]
-real_drag = df["Drag (lb)"] * 4.44822
-
-
-plt.plot(times, altitudes, label="Sim", color="blue")
-plt.plot(real_time, real_alt, label="Real", color="red")
-plt.legend()
-plt.xlabel("Time (s)")
-plt.ylabel("Altitude (m)")
-plt.title("Altitude over Time")
-plt.grid()
-
-plt.figure()
-plt.plot(times, velocities, label="Sim", color="blue")
-plt.plot(real_time, real_vel, label ="Real", color="red")
-plt.legend()
-plt.xlabel("Time (s)")
-plt.ylabel("Velocity (m/s)")
-plt.title("Velocity over Time")
-plt.grid()
-
-plt.figure()
-plt.plot(times, machs, label="Sim", color="blue")
-plt.plot(real_time, real_mach, label="Real", color="red")
-plt.legend()
-plt.xlabel("Time (s)")
-plt.ylabel("Mach")
-plt.title("Mach over Time")
-plt.grid()
-
-plt.figure()
-plt.plot(times, thrusts, label="Sim", color="blue")
-plt.plot(real_time, real_thrust, label="Real", color="red")
-plt.legend()
-plt.xlabel("Time (s)")
-plt.ylabel("Thrust")
-plt.title("Thrust over Time")
-plt.grid()
-
-print(df["Altitude (ft)"].describe())
 plt.show()
