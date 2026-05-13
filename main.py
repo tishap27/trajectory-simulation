@@ -6,7 +6,7 @@ import pandas as pd
 
 motor = Motor.load_from_eng("Cesaroni_9977M2245-P.eng")
 
-rocket = Rocket(motor=motor, Cd=0.77, reference_area=0.009)
+rocket = Rocket(motor=motor, Cd=0.4, reference_area=0.00442)
 
 dt = 0.01 
 
@@ -98,7 +98,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Mach")
 plt.title("Mach over Time")
 plt.grid()
-
+	
 plt.figure()
 plt.plot(times, thrusts, label="Sim", color="blue")
 plt.plot(real_time, real_thrust, label="Real", color="red")

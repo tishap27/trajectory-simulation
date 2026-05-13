@@ -11,10 +11,11 @@ class Rocket:
         self.reference_area = reference_area
 
         self.time = 0.0
+        self.Cd = Cd
 
         # Mass breakdown
-        self.prop_mass = 5.0
-        self.dry_mass = 8.6
+        self.prop_mass = motor.prop_mass
+        self.dry_mass = motor.total_mass - motor.prop_mass
 
         self.Isp = 220
 
@@ -31,7 +32,7 @@ class Rocket:
         return 343 - 0.003 * altitude
     
     def compute_Cd(self, Mach):
-        Cd0 = 0.55
+        Cd0 = self.Cd
         delta_Cd = 0.25 
         width = 0.3
         return Cd0 + delta_Cd * np.exp(-((Mach - 1) / width)**2)
