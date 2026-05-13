@@ -56,6 +56,9 @@ print("Flight time:", rocket.time)
 T_max = max(motor.thrusts)
 m0= rocket.dry_mass + rocket.prop_mass
 print("T/W:", T_max / (m0 * 9.81))
+print("T/W:", T_max / (m0 * 9.81))
+print("Dry mass:", rocket.dry_mass)
+print("Prop mass:", rocket.prop_mass)
 
 df = pd.read_csv("Flight Test.CSV")
 
