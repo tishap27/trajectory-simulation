@@ -15,7 +15,7 @@ class Rocket:
 
         # Mass breakdown
         self.prop_mass = motor.prop_mass
-        self.dry_mass = motor.total_mass - motor.prop_mass
+        self.dry_mass = 8.6
 
         self.Isp = 220
 
